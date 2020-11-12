@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Linq;
 using SpectoLogic.Blazor.MSTeams.Auth;
+using Microsoft.AspNetCore.Authentication.AzureAD.UI;
 
 namespace BlazorTeamTab.Server
 {
@@ -23,6 +24,19 @@ namespace BlazorTeamTab.Server
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAuthentication(sharedOptions =>
+            {
+                sharedOptions.DefaultScheme = AzureADDefaults.AuthenticationScheme;
+            }).AddJwtBearer("AzureAD", options =>
+            {
+                options.Audience = Configuration.GetValue<string>("AzureAd:Audience");
+                options.Authority = Configuration.GetValue<string>("AzureAd:Instance") + Configuration.GetValue<string>("AzureAd:TenantId");
+                options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
+                {
+                    ValidIssuer = Configuration.GetValue<string>("AzureAd:Issuer"),
+                    ValidAudience = Configuration.GetValue<string>("AzureAd:Audience")
+                };
+            });
 
             services.AddControllersWithViews();
             services.AddRazorPages();
@@ -43,12 +57,13 @@ namespace BlazorTeamTab.Server
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
+            app.UseAuthentication();
             //app.UseHttpsRedirection();
             app.UseBlazorFrameworkFiles();
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
