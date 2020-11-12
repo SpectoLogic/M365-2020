@@ -1,0 +1,56 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.8/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.8",
+    "version": "1.0.0",
+    "id": "96057dbd-f1c7-43b5-bd8c-fc976ecd39ac",
+    "packageName": "com.microsoft.teams.extension",
+    "developer": {
+        "name": "Developer Name",
+        "websiteUrl": "https://spectologic.eu.ngrok.io",
+        "privacyUrl": "https://spectologic.eu.ngrok.io/Privacy",
+        "termsOfUseUrl": "https://spectologic.eu.ngrok.io/termsofuse"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "BlazorTab",
+        "full": "BlazorTab"
+    },
+    "description": {
+        "short": "Short description for BlazorTab",
+        "full": "Full description of BlazorTab"
+    },
+    "accentColor": "#FFFFFF",
+    "configurableTabs": [
+        {
+            "configurationUrl": "https://spectologic.eu.ngrok.io/config",
+            "canUpdateConfiguration": true,
+            "scopes": [
+                "team"
+            ],
+            "context": [
+                "channelTab"
+            ]
+        }
+    ],
+    "staticTabs": [
+        {
+            "entityId": "index",
+            "name": "Blazor Personal Tab",
+            "contentUrl": "https://spectologic.eu.ngrok.io/tab?entityid={entityid}",
+            "scopes": [
+                "personal"
+            ]
+        }
+    ],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "validDomains": [
+        "spectologic.eu.ngrok.io",
+        "localhost:44310"
+    ]
+}
