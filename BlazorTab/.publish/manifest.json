@@ -52,5 +52,9 @@
     "validDomains": [
         "spectologic.eu.ngrok.io",
         "localhost:44310"
-    ]
+    ],
+    "webApplicationInfo": {
+        "id": "e2088d72-79ce-4543-ab3c-0988dfecf2f1",
+        "resource": "api://spectologic.eu.ngrok.io/e2088d72-79ce-4543-ab3c-0988dfecf2f1"
+    }
 }
