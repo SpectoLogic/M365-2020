@@ -1,0 +1,35 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.7/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.7",
+  "version": "{version}",
+  "id": "{APP_ID}",
+  "packageName": "com.microsoft.teams.extension",
+  "developer": {
+    "name": "Developer Name",
+    "websiteUrl": "{baseUrl0}",
+    "privacyUrl": "{baseUrl0}/home/privacy",
+    "termsOfUseUrl": "{baseUrl0}/home/termsofuse"
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "name": {
+    "short": "{appname}",
+    "full": "{fullappname}"
+  },
+  "description": {
+    "short": "Short description for {appname}.",
+    "full": "Full description of {appname}"
+  },
+  "accentColor": "#FFFFFF",
+  "bots": [],
+  "composeExtensions": [],
+  "configurableTabs": [],
+  "staticTabs": [],
+  "permissions": [
+    "identity",
+    "messageTeamMembers"
+  ],
+  "validDomains": []
+}
