@@ -20,6 +20,29 @@
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
     <script src="scripts/teams/dist/MicrosoftTeams.js"></script>
+    <script>
+        var _context;
+
+        function InitializeTeamsContext() {
+            console.log("InitializeTeamsContext called...");
+            try {
+                    microsoftTeams.initialize();
+                    microsoftTeams.getContext((context, error) => {
+                    _context = context;
+                });
+            }
+            catch (err) {
+                alert(err.message);
+            }
+        }
+
+        function GetUPN() {
+            console.log("GetUPNCalled");
+            let userName = Object.keys(_context).length > 0 ? _context['upn'] : "";
+            return userName;
+        }
+
+    </script>
 </body>
 
 </html>
