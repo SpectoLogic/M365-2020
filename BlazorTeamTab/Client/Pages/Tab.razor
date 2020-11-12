@@ -1,8 +1,1 @@
-﻿@page "/tab"@inject IJSRuntime JSRuntime;<h1>Counter</h1><p>Current count: @currentCount</p><p>Current User: @userName</p><p>AuthToken: @authToken</p><button class="btn btn-primary" @onclick="IncrementCount">    Click me</button><button class="btn btn-primary" @onclick="InitTeams">    Init Teams</button><button class="btn btn-primary" @onclick="GetUserName">    Get UserName</button><br  /><button class="btn btn-light" @onclick="GetAuthToken">    Get Auth-Token</button>@code { private int currentCount = 0;    private string userName = string.Empty;    private void IncrementCount()    {        currentCount++;    }    private async Task InitTeams()    {        await JSRuntime.InvokeVoidAsync("InitializeTeamsContext");    }    private async Task GetUserName()    {        userName = await JSRuntime.InvokeAsync<string>("GetUPN");    }
-
-    private string authToken = string.Empty;
-
-    private async Task GetAuthToken()
-    {
-        authToken = await JSRuntime.InvokeAsync<string>("getClientSideToken");
-    }}
+﻿@page "/tab"@inject SpectoLogic.Blazor.MSTeams.ITeamsClient TeamsClient;<h1>Counter</h1><p>Current count: @currentCount</p><p>Current User: @userName</p><p>AuthToken: @authToken</p><button class="btn btn-primary" @onclick="IncrementCount">    Click me</button><button class="btn btn-primary" @onclick="GetUserName">    Get UserName</button><br /><button class="btn btn-light" @onclick="GetAuthToken">    Get Auth-Token</button>@code { private int currentCount = 0;    private string userName = string.Empty;    private void IncrementCount()    {        currentCount++;    }    private async Task GetUserName()    {        userName = await TeamsClient.GetUPN();    }    private string authToken = string.Empty;    private async Task GetAuthToken()    {        authToken = await TeamsClient.GetClientToken();    }}

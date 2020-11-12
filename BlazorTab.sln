@@ -14,11 +14,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".publish", ".publish", "{F5
 		BlazorTab\.publish\README.md = BlazorTab\.publish\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorTeamTab.Server", "BlazorTeamTab\Server\BlazorTeamTab.Server.csproj", "{C604F230-5E97-465A-9AC0-C311A2B2B4B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorTeamTab.Server", "BlazorTeamTab\Server\BlazorTeamTab.Server.csproj", "{C604F230-5E97-465A-9AC0-C311A2B2B4B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorTeamTab.Client", "BlazorTeamTab\Client\BlazorTeamTab.Client.csproj", "{40065E99-F064-4D33-BDC4-DC418F7B0F15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorTeamTab.Client", "BlazorTeamTab\Client\BlazorTeamTab.Client.csproj", "{40065E99-F064-4D33-BDC4-DC418F7B0F15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorTeamTab.Shared", "BlazorTeamTab\Shared\BlazorTeamTab.Shared.csproj", "{5D66DC80-7DE4-4561-BC8D-0FD6F44C638A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorTeamTab.Shared", "BlazorTeamTab\Shared\BlazorTeamTab.Shared.csproj", "{5D66DC80-7DE4-4561-BC8D-0FD6F44C638A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpectoLogic.Blazor.MSTeams", "SpectoLogic.Blazor.MSTeams\SpectoLogic.Blazor.MSTeams.csproj", "{D53FD228-3222-4E8F-9E41-B04EBD1A8B49}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,12 @@ Global
 		{5D66DC80-7DE4-4561-BC8D-0FD6F44C638A}.Deploy|Any CPU.Build.0 = Debug|Any CPU
 		{5D66DC80-7DE4-4561-BC8D-0FD6F44C638A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D66DC80-7DE4-4561-BC8D-0FD6F44C638A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D53FD228-3222-4E8F-9E41-B04EBD1A8B49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D53FD228-3222-4E8F-9E41-B04EBD1A8B49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D53FD228-3222-4E8F-9E41-B04EBD1A8B49}.Deploy|Any CPU.ActiveCfg = Debug|Any CPU
+		{D53FD228-3222-4E8F-9E41-B04EBD1A8B49}.Deploy|Any CPU.Build.0 = Debug|Any CPU
+		{D53FD228-3222-4E8F-9E41-B04EBD1A8B49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D53FD228-3222-4E8F-9E41-B04EBD1A8B49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

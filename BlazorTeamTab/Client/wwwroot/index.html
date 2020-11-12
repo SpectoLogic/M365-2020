@@ -1,50 +1,1 @@
-﻿<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>BlazorTeamTab</title>
-    <base href="/" />
-    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/app.css" rel="stylesheet" />
-</head>
-
-<body>
-    <app>Loading...</app>
-
-    <div id="blazor-error-ui">
-        An unhandled error has occurred.
-        <a href="" class="reload">Reload</a>
-        <a class="dismiss">🗙</a>
-    </div>
-    <script src="_framework/blazor.webassembly.js"></script>
-    <script src="scripts/teams/dist/MicrosoftTeams.js"></script>
-    <script>
-        var _context;
-
-        function InitializeTeamsContext() {
-            console.log("InitializeTeamsContext called...");
-            try {
-                    microsoftTeams.initialize();
-                    microsoftTeams.getContext((context, error) => {
-                    _context = context;
-                });
-            }
-            catch (err) {
-                alert(err.message);
-            }
-        }
-
-        function GetUPN() {
-            console.log("GetUPNCalled");
-            let userName = Object.keys(_context).length > 0 ? _context['upn'] : "";
-            return userName;
-        }
-
-        function getClientSideToken() {            try {                return new Promise((resolve, reject) => {                    console.log("Get auth token from Microsoft Teams");                    microsoftTeams.authentication.getAuthToken({                        successCallback: (result) => {                            resolve(result);                        },                        failureCallback: function (error) {                            alert(error);                            reject("Error getting token: " + error);                        }                    });                });            }            catch (err) {                alert(err.message);            }        }
-
-    </script>
-</body>
-
-</html>
+﻿<!DOCTYPE html><html><head>    <meta charset="utf-8" />    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />    <title>BlazorTeamApp</title>    <base href="/" />    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />    <link href="css/app.css" rel="stylesheet" /></head><body>    <app>Loading...</app>    <div id="blazor-error-ui">        An unhandled error has occurred.        <a href="" class="reload">            Reload        </a>        <a class="dismiss">            🗙        </a>    </div>    <script src="_framework/blazor.webassembly.js">    </script>    <!--Reference to the MS Teams Script added with libman -->    <script src="scripts/teams/dist/MicrosoftTeams.js">    </script>    <script data-main="scripts/main" src="scripts/requirejs/require.js"></script></body></html>

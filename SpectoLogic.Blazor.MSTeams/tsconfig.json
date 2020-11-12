@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "module": "AMD",
+    "target": "ES2016",
+    "outDir": "wwwroot"
+  },
+  "exclude": [
+    "node_modules",
+    "wwwroot"
+  ]
+}

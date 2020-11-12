@@ -3,6 +3,11 @@
   "defaultProvider": "cdnjs",
   "libraries": [
     {
+      "provider": "cdnjs",
+      "library": "require.js@2.3.6",
+      "destination": "wwwroot/scripts/requirejs"
+    },
+    {
       "provider": "jsdelivr",
       "library": "@microsoft/teams-js@1.8.0",
       "destination": "wwwroot/scripts/teams"
