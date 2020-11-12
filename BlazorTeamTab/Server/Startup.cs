@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Linq;
+using SpectoLogic.Blazor.MSTeams.Auth;
 
 namespace BlazorTeamTab.Server
 {
@@ -25,6 +26,7 @@ namespace BlazorTeamTab.Server
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddTokenProvider();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

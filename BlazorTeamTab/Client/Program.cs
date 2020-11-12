@@ -20,6 +20,7 @@ namespace BlazorTeamTab.Client
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
             builder.Services.AddMSTeams();
+            builder.Services.AddHttpClient();
             await builder.Build().RunAsync();
         }
     }

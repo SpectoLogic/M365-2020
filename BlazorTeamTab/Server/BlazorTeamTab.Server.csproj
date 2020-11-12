@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\SpectoLogic.Blazor.MSTeams\SpectoLogic.Blazor.MSTeams.csproj" />
     <ProjectReference Include="..\Client\BlazorTeamTab.Client.csproj" />
     <ProjectReference Include="..\Shared\BlazorTeamTab.Shared.csproj" />
   </ItemGroup>

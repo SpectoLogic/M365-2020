@@ -38,6 +38,49 @@ define(["require", "exports"], function (require, exports) {
                 alert(err.message);
             }
         }
+        GetServerToken(clientSideToken, scopes) {
+            try {
+                const promise = new Promise((resolve, reject) => {
+                    microsoftTeams.getContext((context) => {
+                        fetch('/auth/token', {
+                            method: 'post',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                'tid': context.tid,
+                                'token': clientSideToken,
+                                'scopes': scopes
+                            }),
+                            mode: 'cors',
+                            cache: 'default'
+                        })
+                            .then((response) => {
+                            if (response.ok) {
+                                return response.json();
+                            }
+                            else {
+                                reject(response.statusText);
+                            }
+                        })
+                            .then((responseJson) => {
+                            if (responseJson.error) {
+                                reject(responseJson.error);
+                            }
+                            else {
+                                const serverSideToken = responseJson;
+                                console.log(serverSideToken);
+                                resolve(serverSideToken);
+                            }
+                        });
+                    });
+                });
+                return promise;
+            }
+            catch (err) {
+                alert(err.message);
+            }
+        }
     }
     exports.SpectoLogicTeams = SpectoLogicTeams;
     exports.blazorExtensions = 'BlazorExtensions';
